@@ -1,6 +1,9 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
 <title>Mason Blier Portfolio</title>
 <style type="text/css">
     body {
@@ -13,9 +16,6 @@
     }
     a:hover {
         color: #34e2f9;
-    }
-    a:visited {
-        color: #337e87;
     }
     .muted {
         color: gray;
@@ -32,23 +32,28 @@
         display: flex;
         flex-direction: column;
     }
-    .pane {
-        width: 580px;
-        padding: 10px;
-        margin: 0 10px;
-    }
     body>.content {
-        width: 1200px;
+        max-width: 600px;
         margin: 0 auto;
     }
-    .section,
+    .section
     .header {
         margin: 10px 22px;
     }
-    .header>.title {
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .header-main {
+        flex-grow: 1;
+    }
+    .header-main>.title {
         font-size: 1.6em;
         padding: 8px 0;
         color: #438891;
+    }
+    .header-main>.subtitle {
+        color: gray;
     }
     .section>.title {
         font-size: 1.2em;
@@ -56,10 +61,15 @@
         margin-top: 30px;
         margin-bottom: 10px;
     }
-    .pane>.title {
-        padding: 8px;
+    .demo-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
     }
     .demo {
+        width: 100%;
+        max-width: 560px;
         margin-bottom: 20px;
         background: #202022;
         border-radius: 5px;
@@ -68,6 +78,7 @@
     .demo>.name {
         font-size: 1.4em;
         color: #438891;
+        text-decoration: none;
     }
     .demo>.description {
         font-size: 0.9em;
@@ -78,71 +89,73 @@
         border-radius: 5px;
         display: block;
         margin: 15px auto 5px auto;
-        max-width: 500px;
+        max-width: 100%;
+    }
+    @media (min-width: 1200px) {
+        body>.content {
+            max-width: 1200px;
+        }
+        .header-main {
+            min-width: 600px;
+        }
     }
 </style>
 </head>
 <body>
 <div class="content">
     <div class="header">
+        <div class="header-main">
+            <div class="title">Mason Blier</div>
+            <div class="subtitle">Software Engineer</div>
+            <div class="tagline">Creating impressive software, and simplifying the way it's created.</div>
+        </div>
         <div class="skills pull-right muted">
             <div>&nbsp;</div>
             <div class="github pull-right"><a href="https://github.com/masonblier">https://github.com/masonblier</a></div>
             <div>Primary Skills</div>
             <div>Full Stack: JavaScript, Ruby on Rails, React, Rust, PostgreSQL</div>
         </div>
-        <div class="title">Mason Blier</div>
-        <div class="subtitle">Software Engineer</div>
-
-        <div class="tagline">Creating impressive software, and simplifying the way it's created.</div>
     </div>
     <div class="section">
         <div class="title">Recent Posts</div>
+        <div><a class="link" href="https://masonblier.github.io/litcode/seaorm_nesting.html">Nested partial views in the SeaORM database framework</a></div>
         <div><a class="link" href="https://masonblier.github.io/litcode/skip_list.html">Exploring the Skip List data structure with Rust</a></div>
         <div><a class="link" href="https://masonblier.github.io/perceptron-mnist-demo/">Implementation of Perceptron networks to approach solving MNIST</a></div>
     </div>
     <div class="section">
     <div class="title">Demo Projects</div>
     </div>
-    <div class="horiz">
-    <div class="pane">
+    <div class="demo-grid">
         <div class="demo">
-            <div class="name">Hex Formation</div>
+            <a class="name" href="https://masonblier.github.io/hex-formation/">Hex Formation</a>
             <div class="description">Hexagon grid map tower defense game built using HTML5 Canvas.</div>
             <a class="link" href="https://masonblier.github.io/hex-formation/">https://masonblier.github.io/hex-formation/
             <img class="thumbnail" src="im/hex-formation.jpg" alt="Hex Formation"/></a>
         </div>
-
         <div class="demo">
-            <div class="name">kazudoku</div>
-            <div class="description">JavaScript / React Implementation of Number Place Game (Sudoku)</div>
-            <a class="link" href="https://masonblier.github.io/kazudoku/">https://masonblier.github.io/kazudoku/
-            <img class="thumbnail" src="im/kazudoku.jpg" alt="kazudoku"/></a>
-        </div>
-
-        <div class="demo">
-            <div class="name">eqker</div>
-            <div class="description">Graphical display and simulator for backtesting algorithmic trading demos.</div>
-            <a class="link" href="https://masonblier.github.io/eqker/">https://masonblier.github.io/eqker/
-            <img class="thumbnail" src="im/eqker.png" alt="eqker"/></a>
-        </div>
-    </div>
-    <div class="pane">
-        <div class="demo">
-            <div class="name">patched_conics_test</div>
+            <a class="name" href="https://github.com/masonblier/patched_conics_test">patched_conics_test</a>
             <div class="description">Patched conics ui test. References Orbital Mechanics Notes. Uses the Bevy engine.</div>
             <a class="link" href="https://github.com/masonblier/patched_conics_test">https://github.com/masonblier/patched_conics_test
             <img class="thumbnail" src="im/patched_conics_test.jpg" alt="patched_conics_test"/></a>
         </div>
-
         <div class="demo">
-            <div class="name">travel-world</div>
+            <a class="name" href="https://masonblier.github.io/kazudoku/">kazudoku</a>
+            <div class="description">JavaScript / React Implementation of Number Place Game (Sudoku)</div>
+            <a class="link" href="https://masonblier.github.io/kazudoku/">https://masonblier.github.io/kazudoku/
+            <img class="thumbnail" src="im/kazudoku.jpg" alt="kazudoku"/></a>
+        </div>
+        <div class="demo">
+            <a class="name" href="https://github.com/masonblier/travel-world">travel-world</a>
             <div class="description">D3 interactive animation to display a world travel path.</div>
             <a class="link" href="https://github.com/masonblier/travel-world">https://github.com/masonblier/travel-world
             <img class="thumbnail" src="im/travel-world.gif" alt="travel-world"/></a>
         </div>
-
-    </div>
+        <div class="demo">
+            <a class="name" href="https://masonblier.github.io/eqker/">eqker</a>
+            <div class="description">Graphical display and simulator for backtesting algorithmic trading demos.</div>
+            <a class="link" href="https://masonblier.github.io/eqker/">https://masonblier.github.io/eqker/
+            <img class="thumbnail" src="im/eqker.png" alt="eqker"/></a>
+        </div>
     </div>
 </div>
 </div>
